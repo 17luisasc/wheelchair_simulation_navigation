@@ -4,28 +4,29 @@
 	<arg name="world" 				default="LVL_Two.world"/>
 
 	<!-- WheelChair Coordenates -->
-	<arg name="x" 					default="0"/>
+	<!-- <arg name="x" 					default="0"/>
     <arg name="y" 					default="0"/>
     <arg name="z" 					default="0.0"/>
     <arg name="roll" 				default="0.0"/>
     <arg name="pitch" 				default="0.0"/>
-    <arg name="yaw" 				default="3.93"/>
+    <arg name="yaw" 				default="3.93"/> -->
 
 	<!-- Model description -->
-	<include file="$(find intellwheels_desc)/launch/wheelchair.launch"/>
+	<!-- <include file="$(find wheelchair)/launch/wheelchair.launch"/> -->
 
 	<!-- Model spawner -->
-	<node name="spawner" pkg="gazebo_ros" type="spawn_model"
-		  args="-param robot_description -urdf -model wheelchair -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+	<!-- <node name="spawner" pkg="gazebo_ros" type="spawn_model"
+		  args="-param robot_description -urdf -model wheelchair -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/> -->
 
 	<!-- Gazebo -->
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 		<arg name="gui_required"	value="true"/>
 		<arg name="world_name"		value="$(find wheelchair_simulation_navegation)/worlds/$(arg world)"/>
 	</include>
+	
 
-    <!-- Murge filter -->
-	<node pkg="ira_laser_tools" name="laserscans_merger" type="laserscan_multi_merger" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' ">
+    <!-- Merge filter -->
+	<!-- <node pkg="ira_laser_tools" name="laserscans_merger" type="laserscan_multi_merger" output="screen" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' ">
         <param name="destination_frame" value="base_link" />
         <param name="cloud_destination_topic" value="/points"/>
         <param name="scan_destination_topic" value="/scan"/>
@@ -37,7 +38,7 @@
         <param name="scan_time" value="0.0333333"/>
     	<param name="range_min" value="0.0"/>
 		<param name="range_max" value="20.0"/>
-	</node>
+	</node> -->
 
 	<!--RVIZ Vizualisation-->
 	<node pkg="rviz" type="rviz" name="rviz" args="-d $(find wheelchair_simulation_navegation)/rviz/test.rviz"/>

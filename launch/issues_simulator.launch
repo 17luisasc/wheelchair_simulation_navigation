@@ -23,7 +23,7 @@
             <arg name="world"   default="$(arg world).world"/>
         </include>
 
-        <include file="$(find wheelchair_simulation_navegation)/launch/navegation.launch">
+       <!-- <include file="$(find wheelchair_simulation_navegation)/launch/navegation.launch">
             <arg name="planner" default="$(arg planner)"/>
             <arg name="world"   default="$(arg world).yaml"/>
             <arg name="slam"    default="$(arg slam)"/>
@@ -31,7 +31,7 @@
 
         <node pkg="wheelchair_simulation_navegation" type="initialPoser.sh" name="inicialPoser" args="0.529886 0.677173 0 0 0 2.34981"/>
 
-        <node pkg="wheelchair_simulation_navegation" type="GoalSender.sh" name="Goaler" args="1.052 4.530 -1.598" launch-prefix="bash -c 'sleep $(arg problem_1_delay); $0 $@' " />
+        <node pkg="wheelchair_simulation_navegation" type="GoalSender.sh" name="Goaler" args="1.052 4.530 -1.598" launch-prefix="bash -c 'sleep $(arg problem_1_delay); $0 $@' " /> -->
     </group>
 
     <group if="$(eval arg('problem') == 2)">
