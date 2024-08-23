@@ -1,0 +1,760 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='all_cases'>
+      <link name='link_1'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <pose>-3e-06 -3e-06 0 0 -0 0</pose>
+        <visual name='visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <polyline>
+              <height>2.5</height>
+              <point>-0.327328 1.67707</point>
+              <point>-0.413074 1.67994</point>
+              <point>-0.632243 1.68644</point>
+              <point>-0.92773 1.69342</point>
+              <point>-1.24243 1.69769</point>
+              <point>-1.51925 1.6961</point>
+              <point>-1.65038 1.69398</point>
+              <point>-1.78206 1.69173</point>
+              <point>-1.91379 1.68642</point>
+              <point>-2.04509 1.6751</point>
+              <point>-2.17545 1.65484</point>
+              <point>-2.25501 1.63954</point>
+              <point>-2.33583 1.62224</point>
+              <point>-2.41528 1.59941</point>
+              <point>-2.49073 1.56751</point>
+              <point>-2.55957 1.52301</point>
+              <point>-2.60978 1.47432</point>
+              <point>-2.65151 1.41808</point>
+              <point>-2.68611 1.35664</point>
+              <point>-2.71493 1.29236</point>
+              <point>-2.73933 1.22757</point>
+              <point>-2.76433 1.139</point>
+              <point>-2.77985 1.04851</point>
+              <point>-2.78892 0.957023</point>
+              <point>-2.79459 0.865445</point>
+              <point>-2.79989 0.7747</point>
+              <point>-2.80514 0.658281</point>
+              <point>-2.80619 0.541923</point>
+              <point>-2.80484 0.42569</point>
+              <point>-2.80289 0.309646</point>
+              <point>-2.80213 0.193856</point>
+              <point>-2.8045 -0.429608</point>
+              <point>-2.77705 -0.429713</point>
+              <point>-2.77468 0.193751</point>
+              <point>-2.77542 0.310033</point>
+              <point>-2.77736 0.426146</point>
+              <point>-2.7787 0.542028</point>
+              <point>-2.77768 0.657613</point>
+              <point>-2.7725 0.772839</point>
+              <point>-2.76712 0.863929</point>
+              <point>-2.76141 0.954926</point>
+              <point>-2.75249 1.04494</point>
+              <point>-2.73746 1.13309</point>
+              <point>-2.71343 1.21848</point>
+              <point>-2.68946 1.28196</point>
+              <point>-2.66145 1.34424</point>
+              <point>-2.62832 1.40309</point>
+              <point>-2.58899 1.4563</point>
+              <point>-2.54235 1.50167</point>
+              <point>-2.47793 1.5431</point>
+              <point>-2.40603 1.57327</point>
+              <point>-2.32911 1.59536</point>
+              <point>-2.24964 1.61253</point>
+              <point>-2.1701 1.62796</point>
+              <point>-2.04189 1.64786</point>
+              <point>-1.91214 1.65901</point>
+              <point>-1.78136 1.66428</point>
+              <point>-1.65002 1.66655</point>
+              <point>-1.5186 1.66871</point>
+              <point>-1.24279 1.67028</point>
+              <point>-0.928591 1.66601</point>
+              <point>-0.633272 1.65904</point>
+              <point>-0.41409 1.65255</point>
+              <point>-0.328305 1.64968</point>
+              <point>-0.327328 1.67707</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-4.22746 4.27873</point>
+              <point>-4.2892 4.28043</point>
+              <point>-4.44704 4.28396</point>
+              <point>-4.65988 4.28696</point>
+              <point>-4.88663 4.28709</point>
+              <point>-5.08619 4.28198</point>
+              <point>-5.16942 4.27754</point>
+              <point>-5.25282 4.27188</point>
+              <point>-5.33614 4.26416</point>
+              <point>-5.41914 4.25353</point>
+              <point>-5.50159 4.23916</point>
+              <point>-5.59022 4.21991</point>
+              <point>-5.67829 4.1976</point>
+              <point>-5.7653 4.17174</point>
+              <point>-5.85075 4.14185</point>
+              <point>-5.93416 4.10743</point>
+              <point>-5.9966 4.07912</point>
+              <point>-6.05897 4.04859</point>
+              <point>-6.11925 4.01434</point>
+              <point>-6.17542 3.97487</point>
+              <point>-6.22549 3.92867</point>
+              <point>-6.27238 3.87011</point>
+              <point>-6.31103 3.80647</point>
+              <point>-6.34255 3.73926</point>
+              <point>-6.36806 3.66999</point>
+              <point>-6.38868 3.60018</point>
+              <point>-6.39563 3.56756</point>
+              <point>-6.40063 3.53098</point>
+              <point>-6.40402 3.49214</point>
+              <point>-6.40608 3.45272</point>
+              <point>-6.40713 3.41441</point>
+              <point>-6.40744 3.37896</point>
+              <point>-6.40724 3.3482</point>
+              <point>-6.40678 3.32397</point>
+              <point>-6.40631 3.3081</point>
+              <point>-6.4061 3.3024</point>
+              <point>-6.37612 3.30347</point>
+              <point>-6.37633 3.30908</point>
+              <point>-6.37678 3.32474</point>
+              <point>-6.37723 3.34863</point>
+              <point>-6.37743 3.37896</point>
+              <point>-6.37713 3.41394</point>
+              <point>-6.37604 3.45177</point>
+              <point>-6.37394 3.49058</point>
+              <point>-6.37062 3.52844</point>
+              <point>-6.36589 3.56339</point>
+              <point>-6.35955 3.59352</point>
+              <point>-6.33933 3.66187</point>
+              <point>-6.31448 3.72922</point>
+              <point>-6.28406 3.7941</point>
+              <point>-6.24711 3.85504</point>
+              <point>-6.2027 3.91058</point>
+              <point>-6.15576 3.95378</point>
+              <point>-6.10226 3.99124</point>
+              <point>-6.04406 4.0243</point>
+              <point>-5.98304 4.05426</point>
+              <point>-5.92107 4.08242</point>
+              <point>-5.83935 4.11614</point>
+              <point>-5.75541 4.1455</point>
+              <point>-5.66975 4.17096</point>
+              <point>-5.58284 4.19298</point>
+              <point>-5.49519 4.21201</point>
+              <point>-5.41434 4.2261</point>
+              <point>-5.33262 4.23656</point>
+              <point>-5.25026 4.24419</point>
+              <point>-5.16749 4.24982</point>
+              <point>-5.08457 4.25424</point>
+              <point>-4.8866 4.25928</point>
+              <point>-4.66066 4.25914</point>
+              <point>-4.44809 4.25616</point>
+              <point>-4.29023 4.25265</point>
+              <point>-4.22842 4.25097</point>
+              <point>-4.22746 4.27873</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>2.46356 -6.77035</point>
+              <point>2.45859 -4.24162</point>
+              <point>2.39722 -4.24174</point>
+              <point>2.4022 -6.77047</point>
+              <point>2.46356 -6.77035</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>2.4137 -4.12588</point>
+              <point>-1.65786 -4.09569</point>
+              <point>-1.65827 -4.15124</point>
+              <point>2.41328 -4.18143</point>
+              <point>2.4137 -4.12588</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>6.04426 -4.13515</point>
+              <point>2.50181 -4.12167</point>
+              <point>2.50156 -4.18631</point>
+              <point>6.04401 -4.19979</point>
+              <point>6.04426 -4.13515</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>9.0179 -6.83934</point>
+              <point>-8.94423 -6.77099</point>
+              <point>-8.94446 -6.82979</point>
+              <point>9.01768 -6.89813</point>
+              <point>9.0179 -6.83934</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>6.16177 4.21062</point>
+              <point>6.10785 4.21082</point>
+              <point>6.07597 -4.16759</point>
+              <point>6.12989 -4.1678</point>
+              <point>6.16177 4.21062</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>6.04687 4.2278</point>
+              <point>-4.18385 4.28136</point>
+              <point>-4.18418 4.21854</point>
+              <point>6.04655 4.16498</point>
+              <point>6.04687 4.2278</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-6.36987 -3.57669</point>
+              <point>-6.37297 3.24468</point>
+              <point>-6.44122 3.24465</point>
+              <point>-6.43812 -3.57672</point>
+              <point>-6.36987 -3.57669</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-1.71662 -4.20266</point>
+              <point>-1.7559 -4.14412</point>
+              <point>-5.59317 -6.71902</point>
+              <point>-5.55389 -6.77756</point>
+              <point>-1.71662 -4.20266</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>3.40804 -1.61642</point>
+              <point>-2.75074 -1.57829</point>
+              <point>-2.75108 -1.6332</point>
+              <point>3.4077 -1.67134</point>
+              <point>3.40804 -1.61642</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-2.82569 -1.65252</point>
+              <point>-2.85736 -1.59672</point>
+              <point>-6.31447 -3.55892</point>
+              <point>-6.28281 -3.61471</point>
+              <point>-2.82569 -1.65252</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-2.79256 -0.532548</point>
+              <point>-2.84812 -0.532336</point>
+              <point>-2.85203 -1.56126</point>
+              <point>-2.79648 -1.56148</point>
+              <point>-2.79256 -0.532548</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>0.818969 1.73046</point>
+              <point>-0.224658 1.73443</point>
+              <point>-0.224869 1.67888</point>
+              <point>0.818757 1.67491</point>
+              <point>0.818969 1.73046</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>3.37131 -1.52458</point>
+              <point>0.883178 1.63155</point>
+              <point>0.840797 1.59814</point>
+              <point>3.32893 -1.55799</point>
+              <point>3.37131 -1.52458</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-8.95849 -6.72687</point>
+              <point>-8.93609 6.86997</point>
+              <point>-8.9955 6.87007</point>
+              <point>-9.0179 -6.72677</point>
+              <point>-8.95849 -6.72687</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>8.86413 6.83057</point>
+              <point>-8.89223 6.89813</point>
+              <point>-8.89244 6.84117</point>
+              <point>8.86391 6.77361</point>
+              <point>8.86413 6.83057</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>9.00177 -6.79506</point>
+              <point>8.99465 6.78701</point>
+              <point>8.93906 6.78699</point>
+              <point>8.94618 -6.79509</point>
+              <point>9.00177 -6.79506</point>
+            </polyline>
+          </geometry>
+          <material>
+            <lighting>1</lighting>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <shader type='pixel'/>
+          </material>
+          <transparency>0</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+        <collision name='collision'>
+          <laser_retro>0</laser_retro>
+          <max_contacts>10</max_contacts>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <polyline>
+              <height>2.5</height>
+              <point>-0.327328 1.67707</point>
+              <point>-0.413074 1.67994</point>
+              <point>-0.632243 1.68644</point>
+              <point>-0.92773 1.69342</point>
+              <point>-1.24243 1.69769</point>
+              <point>-1.51925 1.6961</point>
+              <point>-1.65038 1.69398</point>
+              <point>-1.78206 1.69173</point>
+              <point>-1.91379 1.68642</point>
+              <point>-2.04509 1.6751</point>
+              <point>-2.17545 1.65484</point>
+              <point>-2.25501 1.63954</point>
+              <point>-2.33583 1.62224</point>
+              <point>-2.41528 1.59941</point>
+              <point>-2.49073 1.56751</point>
+              <point>-2.55957 1.52301</point>
+              <point>-2.60978 1.47432</point>
+              <point>-2.65151 1.41808</point>
+              <point>-2.68611 1.35664</point>
+              <point>-2.71493 1.29236</point>
+              <point>-2.73933 1.22757</point>
+              <point>-2.76433 1.139</point>
+              <point>-2.77985 1.04851</point>
+              <point>-2.78892 0.957023</point>
+              <point>-2.79459 0.865445</point>
+              <point>-2.79989 0.7747</point>
+              <point>-2.80514 0.658281</point>
+              <point>-2.80619 0.541923</point>
+              <point>-2.80484 0.42569</point>
+              <point>-2.80289 0.309646</point>
+              <point>-2.80213 0.193856</point>
+              <point>-2.8045 -0.429608</point>
+              <point>-2.77705 -0.429713</point>
+              <point>-2.77468 0.193751</point>
+              <point>-2.77542 0.310033</point>
+              <point>-2.77736 0.426146</point>
+              <point>-2.7787 0.542028</point>
+              <point>-2.77768 0.657613</point>
+              <point>-2.7725 0.772839</point>
+              <point>-2.76712 0.863929</point>
+              <point>-2.76141 0.954926</point>
+              <point>-2.75249 1.04494</point>
+              <point>-2.73746 1.13309</point>
+              <point>-2.71343 1.21848</point>
+              <point>-2.68946 1.28196</point>
+              <point>-2.66145 1.34424</point>
+              <point>-2.62832 1.40309</point>
+              <point>-2.58899 1.4563</point>
+              <point>-2.54235 1.50167</point>
+              <point>-2.47793 1.5431</point>
+              <point>-2.40603 1.57327</point>
+              <point>-2.32911 1.59536</point>
+              <point>-2.24964 1.61253</point>
+              <point>-2.1701 1.62796</point>
+              <point>-2.04189 1.64786</point>
+              <point>-1.91214 1.65901</point>
+              <point>-1.78136 1.66428</point>
+              <point>-1.65002 1.66655</point>
+              <point>-1.5186 1.66871</point>
+              <point>-1.24279 1.67028</point>
+              <point>-0.928591 1.66601</point>
+              <point>-0.633272 1.65904</point>
+              <point>-0.41409 1.65255</point>
+              <point>-0.328305 1.64968</point>
+              <point>-0.327328 1.67707</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-4.22746 4.27873</point>
+              <point>-4.2892 4.28043</point>
+              <point>-4.44704 4.28396</point>
+              <point>-4.65988 4.28696</point>
+              <point>-4.88663 4.28709</point>
+              <point>-5.08619 4.28198</point>
+              <point>-5.16942 4.27754</point>
+              <point>-5.25282 4.27188</point>
+              <point>-5.33614 4.26416</point>
+              <point>-5.41914 4.25353</point>
+              <point>-5.50159 4.23916</point>
+              <point>-5.59022 4.21991</point>
+              <point>-5.67829 4.1976</point>
+              <point>-5.7653 4.17174</point>
+              <point>-5.85075 4.14185</point>
+              <point>-5.93416 4.10743</point>
+              <point>-5.9966 4.07912</point>
+              <point>-6.05897 4.04859</point>
+              <point>-6.11925 4.01434</point>
+              <point>-6.17542 3.97487</point>
+              <point>-6.22549 3.92867</point>
+              <point>-6.27238 3.87011</point>
+              <point>-6.31103 3.80647</point>
+              <point>-6.34255 3.73926</point>
+              <point>-6.36806 3.66999</point>
+              <point>-6.38868 3.60018</point>
+              <point>-6.39563 3.56756</point>
+              <point>-6.40063 3.53098</point>
+              <point>-6.40402 3.49214</point>
+              <point>-6.40608 3.45272</point>
+              <point>-6.40713 3.41441</point>
+              <point>-6.40744 3.37896</point>
+              <point>-6.40724 3.3482</point>
+              <point>-6.40678 3.32397</point>
+              <point>-6.40631 3.3081</point>
+              <point>-6.4061 3.3024</point>
+              <point>-6.37612 3.30347</point>
+              <point>-6.37633 3.30908</point>
+              <point>-6.37678 3.32474</point>
+              <point>-6.37723 3.34863</point>
+              <point>-6.37743 3.37896</point>
+              <point>-6.37713 3.41394</point>
+              <point>-6.37604 3.45177</point>
+              <point>-6.37394 3.49058</point>
+              <point>-6.37062 3.52844</point>
+              <point>-6.36589 3.56339</point>
+              <point>-6.35955 3.59352</point>
+              <point>-6.33933 3.66187</point>
+              <point>-6.31448 3.72922</point>
+              <point>-6.28406 3.7941</point>
+              <point>-6.24711 3.85504</point>
+              <point>-6.2027 3.91058</point>
+              <point>-6.15576 3.95378</point>
+              <point>-6.10226 3.99124</point>
+              <point>-6.04406 4.0243</point>
+              <point>-5.98304 4.05426</point>
+              <point>-5.92107 4.08242</point>
+              <point>-5.83935 4.11614</point>
+              <point>-5.75541 4.1455</point>
+              <point>-5.66975 4.17096</point>
+              <point>-5.58284 4.19298</point>
+              <point>-5.49519 4.21201</point>
+              <point>-5.41434 4.2261</point>
+              <point>-5.33262 4.23656</point>
+              <point>-5.25026 4.24419</point>
+              <point>-5.16749 4.24982</point>
+              <point>-5.08457 4.25424</point>
+              <point>-4.8866 4.25928</point>
+              <point>-4.66066 4.25914</point>
+              <point>-4.44809 4.25616</point>
+              <point>-4.29023 4.25265</point>
+              <point>-4.22842 4.25097</point>
+              <point>-4.22746 4.27873</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>2.46356 -6.77035</point>
+              <point>2.45859 -4.24162</point>
+              <point>2.39722 -4.24174</point>
+              <point>2.4022 -6.77047</point>
+              <point>2.46356 -6.77035</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>2.4137 -4.12588</point>
+              <point>-1.65786 -4.09569</point>
+              <point>-1.65827 -4.15124</point>
+              <point>2.41328 -4.18143</point>
+              <point>2.4137 -4.12588</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>6.04426 -4.13515</point>
+              <point>2.50181 -4.12167</point>
+              <point>2.50156 -4.18631</point>
+              <point>6.04401 -4.19979</point>
+              <point>6.04426 -4.13515</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>9.0179 -6.83934</point>
+              <point>-8.94423 -6.77099</point>
+              <point>-8.94446 -6.82979</point>
+              <point>9.01768 -6.89813</point>
+              <point>9.0179 -6.83934</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>6.16177 4.21062</point>
+              <point>6.10785 4.21082</point>
+              <point>6.07597 -4.16759</point>
+              <point>6.12989 -4.1678</point>
+              <point>6.16177 4.21062</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>6.04687 4.2278</point>
+              <point>-4.18385 4.28136</point>
+              <point>-4.18418 4.21854</point>
+              <point>6.04655 4.16498</point>
+              <point>6.04687 4.2278</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-6.36987 -3.57669</point>
+              <point>-6.37297 3.24468</point>
+              <point>-6.44122 3.24465</point>
+              <point>-6.43812 -3.57672</point>
+              <point>-6.36987 -3.57669</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-1.71662 -4.20266</point>
+              <point>-1.7559 -4.14412</point>
+              <point>-5.59317 -6.71902</point>
+              <point>-5.55389 -6.77756</point>
+              <point>-1.71662 -4.20266</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>3.40804 -1.61642</point>
+              <point>-2.75074 -1.57829</point>
+              <point>-2.75108 -1.6332</point>
+              <point>3.4077 -1.67134</point>
+              <point>3.40804 -1.61642</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-2.82569 -1.65252</point>
+              <point>-2.85736 -1.59672</point>
+              <point>-6.31447 -3.55892</point>
+              <point>-6.28281 -3.61471</point>
+              <point>-2.82569 -1.65252</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-2.79256 -0.532548</point>
+              <point>-2.84812 -0.532336</point>
+              <point>-2.85203 -1.56126</point>
+              <point>-2.79648 -1.56148</point>
+              <point>-2.79256 -0.532548</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>0.818969 1.73046</point>
+              <point>-0.224658 1.73443</point>
+              <point>-0.224869 1.67888</point>
+              <point>0.818757 1.67491</point>
+              <point>0.818969 1.73046</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>3.37131 -1.52458</point>
+              <point>0.883178 1.63155</point>
+              <point>0.840797 1.59814</point>
+              <point>3.32893 -1.55799</point>
+              <point>3.37131 -1.52458</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>-8.95849 -6.72687</point>
+              <point>-8.93609 6.86997</point>
+              <point>-8.9955 6.87007</point>
+              <point>-9.0179 -6.72677</point>
+              <point>-8.95849 -6.72687</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>8.86413 6.83057</point>
+              <point>-8.89223 6.89813</point>
+              <point>-8.89244 6.84117</point>
+              <point>8.86391 6.77361</point>
+              <point>8.86413 6.83057</point>
+            </polyline>
+            <polyline>
+              <height>2.5</height>
+              <point>9.00177 -6.79506</point>
+              <point>8.99465 6.78701</point>
+              <point>8.93906 6.78699</point>
+              <point>8.94618 -6.79509</point>
+              <point>9.00177 -6.79506</point>
+            </polyline>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+                <fdir1>0 0 0</fdir1>
+                <slip1>0</slip1>
+                <slip2>0</slip2>
+              </ode>
+              <torsional>
+                <coefficient>1</coefficient>
+                <patch_radius>0</patch_radius>
+                <surface_radius>0</surface_radius>
+                <use_patch_radius>1</use_patch_radius>
+                <ode>
+                  <slip>0</slip>
+                </ode>
+              </torsional>
+            </friction>
+            <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+            <contact>
+              <collide_without_contact>0</collide_without_contact>
+              <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+              <collide_bitmask>1</collide_bitmask>
+              <ode>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+                <max_vel>0.01</max_vel>
+                <min_depth>0</min_depth>
+              </ode>
+              <bullet>
+                <split_impulse>1</split_impulse>
+                <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+                <soft_cfm>0</soft_cfm>
+                <soft_erp>0.2</soft_erp>
+                <kp>1e+13</kp>
+                <kd>1</kd>
+              </bullet>
+            </contact>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>-3.02429 5.55094 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>34 183000000</sim_time>
+      <real_time>34 318045014</real_time>
+      <wall_time>1724242188 614125833</wall_time>
+      <iterations>34183</iterations>
+      <model name='all_cases'>
+        <pose>-3.02429 5.55094 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link_1'>
+          <pose>-3.02429 5.55094 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>2.66947 -1.41904 29.0296 0 1.5138 -3.10699</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>
